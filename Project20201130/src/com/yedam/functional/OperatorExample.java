@@ -24,12 +24,8 @@ public class OperatorExample {
 		});
 		System.out.println("제일 큰 값: " + maxValue);
 		
-		int minValue = maxOrMin(new IntBinaryOperator() {
-			@Override
-			public int applyAsInt(int left, int right) {
-				System.out.println("left: " + left + ", right: " + right);
-				return right > left ? left : right;
-			}
+		int minValue = maxOrMin((a, b) -> {
+			return a > b ? b : a;
 		});
 		System.out.println("제일 작은 값: " + minValue);
 	}
